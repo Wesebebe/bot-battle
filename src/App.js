@@ -1,10 +1,10 @@
 import React from "react";
-import BotCollection from "./BotCollection"
+import BotsPage from "./BotsPage";
 
 function App() {
   return (
     <div>
-      <BotCollection />
+      <BotsPage />
     </div>
   );
 }
