@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BotCard({bot}) {
+function BotCard({bot, clickEvent, deleteBot}) {
     const botTypeClasses = {
     Assault: "icon military",
     Defender: "icon shield",
@@ -12,8 +12,8 @@ function BotCard({bot}) {
 
   return (
     <div className="ui column">
-      {/* <div className="ui card" key={bot.id} onClick={() => clickEvent(bot)}> */}
-      <div className="ui card" key={bot.id}>
+      <div className="ui card" key={bot.id} onClick={() => clickEvent(bot)}>
+      {/* <div className="ui card" key={bot.id}> */}
         <div className="image">
           <img alt="oh no!" src={bot.avatar_url} />
         </div>
@@ -42,7 +42,7 @@ function BotCard({bot}) {
           </span>
           <span>
             <div className="ui center aligned segment basic">
-              {/* <button
+              <button
                 className="ui mini red button"
                 onClick={(event) => {
                   event.stopPropagation();
@@ -50,7 +50,7 @@ function BotCard({bot}) {
                 }}
               >
                 x
-              </button> */}
+              </button>
             </div>
           </span>
         </div>

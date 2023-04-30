@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import YourBotArmy from './YourBotArmy';
 import BotCollection from './BotCollection';
 
 function BotsPage() {
@@ -18,12 +19,23 @@ function BotsPage() {
         setBots(bots.map((b) => (b.id === bot.id ? { ...b, army: true } : b)));
    }
 
+   //function to delete bot
    function deleteBot(bot) {
         const deletedBot = bots.filter((b) => b.id !== bot.id);
        setBots((bots) => deletedBot);
    }
+
+   function removeBot(bot) {
+    setBots(bots.map((b) => (b.id === bot.id ? { ...b, army: false } : b)));
+   }
+
   return (
     <div>
+      <YourBotArmy
+        bots={bots.filter((b) => b.army)}
+        removeBot={removeBot}
+        deleteBot={deleteBot}
+      />
       <BotCollection bots={bots} enlistBot={enlistBot} deleteBot={deleteBot}/>
     </div>
   )
