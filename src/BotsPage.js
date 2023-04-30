@@ -15,11 +15,16 @@ function BotsPage() {
 
     //function to enlist a bot
     function enlistBot(bot) {
-    setBots(bots.map((b) => (b.id === bot.id ? { ...b, army: true } : b)));
-  }
+        setBots(bots.map((b) => (b.id === bot.id ? { ...b, army: true } : b)));
+   }
+
+   function deleteBot(bot) {
+        const deletedBot = bots.filter((b) => b.id !== bot.id);
+       setBots((bots) => deletedBot);
+   }
   return (
     <div>
-      <BotCollection bots={bots} enlistBot={enlistBot} />
+      <BotCollection bots={bots} enlistBot={enlistBot} deleteBot={deleteBot}/>
     </div>
   )
 }
