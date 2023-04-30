@@ -12,9 +12,14 @@ function BotsPage() {
                 setBots(data)
             });
     })
+
+    //function to enlist a bot
+    function enlistBot(bot) {
+    setBots(bots.map((b) => (b.id === bot.id ? { ...b, army: true } : b)));
+  }
   return (
     <div>
-      <BotCollection bots={bots} />
+      <BotCollection bots={bots} enlistBot={enlistBot} />
     </div>
   )
 }
