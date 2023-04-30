@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import BotCard from './BotCard';
 
 function BotCollection({bots}) {
   const botItem = bots.map((bot) => {
@@ -10,8 +11,10 @@ function BotCollection({bots}) {
     )
   })
   return (
-    <div>
-      {botItem}
+    <div className="ui four column grid">
+      <div className="row">
+        {botItem}
+      </div>
     </div>
   )
 }

@@ -3,7 +3,7 @@ import BotsPage from "./BotsPage";
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <BotsPage />
     </div>
   );
